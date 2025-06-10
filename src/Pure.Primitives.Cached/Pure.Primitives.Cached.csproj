@@ -6,4 +6,13 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <PropertyGroup>
+    <PackageId>Pure.Primitives.Cached</PackageId>
+    <RootNamespace>Pure.Primitives.Cached</RootNamespace>
+    <AssemblyName>Pure.Primitives.Cached</AssemblyName>
+    <Authors>Dmitry Kurochkin</Authors>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/kudima03/Pure.Primitives.Cached</PackageProjectUrl>
+  </PropertyGroup>
+
 </Project>
