@@ -6,7 +6,7 @@ public sealed record CachedBool : IBool
 {
     private readonly Lazy<bool> _lazyValue;
 
-    public CachedBool(IBool value) : this(new Lazy<bool>(() => value.BoolValue, isThreadSafe: true)) { }
+    public CachedBool(IBool value) : this(new Lazy<bool>(() => value.BoolValue, LazyThreadSafetyMode.ExecutionAndPublication)) { }
 
     private CachedBool(Lazy<bool> lazyValue)
     {
