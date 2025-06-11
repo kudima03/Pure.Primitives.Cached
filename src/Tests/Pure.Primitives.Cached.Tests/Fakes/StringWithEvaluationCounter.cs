@@ -1,0 +1,36 @@
+﻿using Pure.Primitives.Abstractions.Char;
+using Pure.Primitives.Abstractions.String;
+using System.Collections;
+
+namespace Pure.Primitives.Cached.Tests.Fakes;
+
+public sealed record StringWithEvaluationCounter : IString
+{
+    private readonly string _value;
+
+    public StringWithEvaluationCounter(string value)
+    {
+        _value = value;
+    }
+
+    public int AccessCounter { get; private set; }
+
+    string IString.TextValue
+    {
+        get
+        {
+            AccessCounter++;
+            return _value;
+        }
+    }
+
+    public IEnumerator<IChar> GetEnumerator()
+    {
+        return _value.Select(x => new Char.Char(x)).GetEnumerator();
+    }
+
+    IEnumerator IEnumerable.GetEnumerator()
+    {
+        return GetEnumerator();
+    }
+}
