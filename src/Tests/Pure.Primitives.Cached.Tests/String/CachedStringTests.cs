@@ -28,7 +28,13 @@ public sealed record CachedStringTests
         StringWithEvaluationCounter underlyingValue = new StringWithEvaluationCounter(expected);
         IEnumerable cached = new CachedString(underlyingValue);
 
-        char[] chars = (from IChar i in cached select i.CharValue).ToArray();
+        ICollection<char> list = new List<char>();
+        foreach (object i in cached)
+        {
+            list.Add(((IChar)i).CharValue);
+        }
+
+        char[] chars = list.ToArray();
 
         Assert.Equal(expected, new string(chars));
     }
