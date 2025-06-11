@@ -10,6 +10,18 @@ namespace Pure.Primitives.Cached.Tests.String;
 public sealed record CachedStringTests
 {
     [Fact]
+    public void EnumeratesAsTyped()
+    {
+        const string expected = "expected value";
+        StringWithEvaluationCounter underlyingValue = new StringWithEvaluationCounter(expected);
+        IEnumerable<IChar> cached = new CachedString(underlyingValue);
+
+        char[] chars = cached.Select(x => x.CharValue).ToArray();
+
+        Assert.Equal(expected, new string(chars));
+    }
+
+    [Fact]
     public void EnumeratesAsUntyped()
     {
         const string expected = "expected value";
