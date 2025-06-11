@@ -5,8 +5,8 @@ using Pure.Primitives.DateTime;
 
 namespace Pure.Primitives.Cached.Tests.DateTime;
 
-using DateTime = Primitives.DateTime.DateTime;
 using Date = Primitives.Date.Date;
+using DateTime = Primitives.DateTime.DateTime;
 using Time = Primitives.Time.Time;
 
 public sealed record CachedDateTimeTests
@@ -47,9 +47,9 @@ public sealed record CachedDateTimeTests
             underlyingYear,
             underlyingMonth,
             underlyingDay,
-            underlyingHour, 
+            underlyingHour,
             underlyingMinute,
-            underlyingSecond, 
+            underlyingSecond,
             underlyingMillisecond,
             underlyingMicrosecond,
             underlyingNanosecond
