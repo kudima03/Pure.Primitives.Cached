@@ -4,6 +4,8 @@ using System.Collections;
 
 namespace Pure.Primitives.Cached.String;
 
+using Char = Primitives.Char.Char;
+
 public sealed record CachedString : IString
 {
     private readonly Lazy<string> _lazyValue;
@@ -19,7 +21,7 @@ public sealed record CachedString : IString
 
     public IEnumerator<IChar> GetEnumerator()
     {
-        return _lazyValue.Value.Select(x => new Char.Char(x)).GetEnumerator();
+        return _lazyValue.Value.Select(x => new Char(x)).GetEnumerator();
     }
 
     public override int GetHashCode()
