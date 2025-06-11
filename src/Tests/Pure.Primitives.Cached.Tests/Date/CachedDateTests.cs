@@ -26,8 +26,8 @@ public sealed record CachedDateTests
 
         Assert.True(new[]
         {
-            underlyingYear, 
-            underlyingMonth, 
+            underlyingYear,
+            underlyingMonth,
             underlyingDay
         }.All(x => x.AccessCounter == 1));
     }
