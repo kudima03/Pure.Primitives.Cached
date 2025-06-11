@@ -4,6 +4,8 @@ using System.Collections;
 
 namespace Pure.Primitives.Cached.Tests.Fakes;
 
+using Char = Primitives.Char.Char;
+
 public sealed record StringWithEvaluationCounter : IString
 {
     private readonly string _value;
@@ -26,7 +28,7 @@ public sealed record StringWithEvaluationCounter : IString
 
     public IEnumerator<IChar> GetEnumerator()
     {
-        return _value.Select(x => new Char.Char(x)).GetEnumerator();
+        return _value.Select(x => new Char(x)).GetEnumerator();
     }
 
     IEnumerator IEnumerable.GetEnumerator()
