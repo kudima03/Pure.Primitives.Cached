@@ -16,7 +16,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Pure.Primitives" Version="2.0.1" />
+    <PackageReference Include="Pure.Primitives" Version="3.0.0" />
   </ItemGroup>
 
 </Project>
