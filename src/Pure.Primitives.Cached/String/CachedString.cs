@@ -4,6 +4,8 @@ using Pure.Primitives.Abstractions.String;
 
 namespace Pure.Primitives.Cached.String;
 
+using Char = Primitives.Char.Char;
+
 public sealed record CachedString : IString
 {
     private readonly Lazy<string> _lazyValue;
