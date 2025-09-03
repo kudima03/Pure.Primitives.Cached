@@ -1,4 +1,4 @@
-using Pure.Primitives.Abstractions.Char;
+﻿using Pure.Primitives.Abstractions.Char;
 
 namespace Pure.Primitives.Cached.Char;
 
@@ -6,14 +6,7 @@ public sealed record CachedChar : IChar
 {
     private readonly Lazy<char> _lazyValue;
 
-    public CachedChar(IChar value)
-        : this(
-            new Lazy<char>(
-                () => value.CharValue,
-                LazyThreadSafetyMode.ExecutionAndPublication
-            )
-        )
-    { }
+    public CachedChar(IChar value) : this(new Lazy<char>(() => value.CharValue, LazyThreadSafetyMode.ExecutionAndPublication)) { }
 
     private CachedChar(Lazy<char> lazyValue)
     {

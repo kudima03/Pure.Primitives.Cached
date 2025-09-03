@@ -1,4 +1,4 @@
-using Pure.Primitives.Abstractions.Date;
+﻿using Pure.Primitives.Abstractions.Date;
 using Pure.Primitives.Abstractions.Number;
 using Pure.Primitives.Cached.Number;
 
@@ -6,12 +6,10 @@ namespace Pure.Primitives.Cached.Date;
 
 public sealed record CachedDate : IDate
 {
-    public CachedDate(IDate value)
-        : this(
-            new CachedNumber<ushort>(value.Day),
+    public CachedDate(IDate value) :
+        this(new CachedNumber<ushort>(value.Day),
             new CachedNumber<ushort>(value.Month),
-            new CachedNumber<ushort>(value.Year)
-        )
+            new CachedNumber<ushort>(value.Year))
     { }
 
     private CachedDate(INumber<ushort> day, INumber<ushort> month, INumber<ushort> year)

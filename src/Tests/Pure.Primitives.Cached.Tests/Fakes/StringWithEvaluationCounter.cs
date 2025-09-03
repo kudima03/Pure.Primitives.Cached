@@ -1,8 +1,10 @@
-using System.Collections;
-using Pure.Primitives.Abstractions.Char;
+﻿using Pure.Primitives.Abstractions.Char;
 using Pure.Primitives.Abstractions.String;
+using System.Collections;
 
 namespace Pure.Primitives.Cached.Tests.Fakes;
+
+using Char = Primitives.Char.Char;
 
 public sealed record StringWithEvaluationCounter : IString
 {

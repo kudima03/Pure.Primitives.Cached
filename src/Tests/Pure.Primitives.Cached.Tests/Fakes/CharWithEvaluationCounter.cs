@@ -1,4 +1,4 @@
-using Pure.Primitives.Abstractions.Char;
+﻿using Pure.Primitives.Abstractions.Char;
 
 namespace Pure.Primitives.Cached.Tests.Fakes;
 

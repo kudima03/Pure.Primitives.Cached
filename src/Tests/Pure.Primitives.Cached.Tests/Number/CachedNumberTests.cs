@@ -1,4 +1,4 @@
-using Pure.Primitives.Abstractions.Number;
+﻿using Pure.Primitives.Abstractions.Number;
 using Pure.Primitives.Cached.Number;
 using Pure.Primitives.Cached.Tests.Fakes;
 using Pure.Primitives.Number;
@@ -10,8 +10,7 @@ public sealed record CachedNumberTests
     [Fact]
     public void UnderlyingValueEvaluatesOnce()
     {
-        NumberWithEvaluationCounter<int> underlyingValue =
-            new NumberWithEvaluationCounter<int>(10);
+        NumberWithEvaluationCounter<int> underlyingValue = new NumberWithEvaluationCounter<int>(10);
         INumber<int> cached = new CachedNumber<int>(underlyingValue);
         foreach (int i in Enumerable.Range(0, 100))
         {
@@ -24,16 +23,11 @@ public sealed record CachedNumberTests
     [Fact]
     public void ThrowsExceptionOnGetHashCode()
     {
-        Assert.Throws<NotSupportedException>(() =>
-            new CachedNumber<int>(new MinInt()).GetHashCode()
-        );
+        Assert.Throws<NotSupportedException>(() => new CachedNumber<int>(new MinInt()).GetHashCode());
     }
-
     [Fact]
     public void ThrowsExceptionOnToString()
     {
-        Assert.Throws<NotSupportedException>(() =>
-            new CachedNumber<int>(new MinInt()).ToString()
-        );
+        Assert.Throws<NotSupportedException>(() => new CachedNumber<int>(new MinInt()).ToString());
     }
 }

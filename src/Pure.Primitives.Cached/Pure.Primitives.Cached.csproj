@@ -1,9 +1,11 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
     <TargetFramework>net9.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
+
   <PropertyGroup>
     <PackageId>Pure.Primitives.Cached</PackageId>
     <RootNamespace>Pure.Primitives.Cached</RootNamespace>
@@ -12,7 +14,9 @@
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/kudima03/Pure.Primitives.Cached</PackageProjectUrl>
   </PropertyGroup>
+
   <ItemGroup>
     <PackageReference Include="Pure.Primitives" Version="3.0.0" />
   </ItemGroup>
+
 </Project>

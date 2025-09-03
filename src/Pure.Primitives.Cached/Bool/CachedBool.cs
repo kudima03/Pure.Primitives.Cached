@@ -1,4 +1,4 @@
-using Pure.Primitives.Abstractions.Bool;
+﻿using Pure.Primitives.Abstractions.Bool;
 
 namespace Pure.Primitives.Cached.Bool;
 
@@ -6,14 +6,7 @@ public sealed record CachedBool : IBool
 {
     private readonly Lazy<bool> _lazyValue;
 
-    public CachedBool(IBool value)
-        : this(
-            new Lazy<bool>(
-                () => value.BoolValue,
-                LazyThreadSafetyMode.ExecutionAndPublication
-            )
-        )
-    { }
+    public CachedBool(IBool value) : this(new Lazy<bool>(() => value.BoolValue, LazyThreadSafetyMode.ExecutionAndPublication)) { }
 
     private CachedBool(Lazy<bool> lazyValue)
     {
