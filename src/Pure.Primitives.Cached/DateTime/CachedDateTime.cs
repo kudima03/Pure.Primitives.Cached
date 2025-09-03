@@ -1,4 +1,4 @@
-﻿using Pure.Primitives.Abstractions.Date;
+using Pure.Primitives.Abstractions.Date;
 using Pure.Primitives.Abstractions.DateTime;
 using Pure.Primitives.Abstractions.Number;
 using Pure.Primitives.Abstractions.Time;
@@ -13,15 +13,14 @@ public sealed record CachedDateTime : IDateTime
 
     private readonly ITime _cachedTime;
 
-    public CachedDateTime(IDateTime value) : this(new CachedDate(value), new CachedTime(value))
-    { }
+    public CachedDateTime(IDateTime value)
+        : this(new CachedDate(value), new CachedTime(value)) { }
 
     private CachedDateTime(IDate cachedDate, ITime cachedTime)
     {
         _cachedDate = cachedDate;
         _cachedTime = cachedTime;
     }
-
 
     public INumber<ushort> Year => _cachedDate.Year;
 
