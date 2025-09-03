@@ -1,4 +1,4 @@
-﻿using Pure.Primitives.Abstractions.DayOfWeek;
+using Pure.Primitives.Abstractions.DayOfWeek;
 using Pure.Primitives.Abstractions.Number;
 
 namespace Pure.Primitives.Cached.Tests.Fakes;

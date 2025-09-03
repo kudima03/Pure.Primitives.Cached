@@ -1,4 +1,4 @@
-﻿using Pure.Primitives.Abstractions.Bool;
+using Pure.Primitives.Abstractions.Bool;
 using Pure.Primitives.Bool;
 using Pure.Primitives.Cached.Bool;
 using Pure.Primitives.Cached.Tests.Fakes;
@@ -23,11 +23,16 @@ public sealed record CachedBoolTests
     [Fact]
     public void ThrowsExceptionOnGetHashCode()
     {
-        Assert.Throws<NotSupportedException>(() => new CachedBool(new False()).GetHashCode());
+        _ = Assert.Throws<NotSupportedException>(() =>
+            new CachedBool(new False()).GetHashCode()
+        );
     }
+
     [Fact]
     public void ThrowsExceptionOnToString()
     {
-        Assert.Throws<NotSupportedException>(() => new CachedBool(new False()).ToString());
+        _ = Assert.Throws<NotSupportedException>(() =>
+            new CachedBool(new False()).ToString()
+        );
     }
 }
