@@ -1,6 +1,6 @@
-﻿using Pure.Primitives.Abstractions.Char;
-using Pure.Primitives.Abstractions.String;
 using System.Collections;
+using Pure.Primitives.Abstractions.Char;
+using Pure.Primitives.Abstractions.String;
 
 namespace Pure.Primitives.Cached.String;
 
@@ -10,7 +10,14 @@ public sealed record CachedString : IString
 {
     private readonly Lazy<string> _lazyValue;
 
-    public CachedString(IString value) : this(new Lazy<string>(() => value.TextValue, LazyThreadSafetyMode.ExecutionAndPublication)) { }
+    public CachedString(IString value)
+        : this(
+            new Lazy<string>(
+                () => value.TextValue,
+                LazyThreadSafetyMode.ExecutionAndPublication
+            )
+        )
+    { }
 
     private CachedString(Lazy<string> lazyValue)
     {

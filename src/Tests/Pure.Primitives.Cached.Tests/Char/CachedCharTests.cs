@@ -1,4 +1,4 @@
-﻿using Pure.Primitives.Abstractions.Char;
+using Pure.Primitives.Abstractions.Char;
 using Pure.Primitives.Cached.Char;
 using Pure.Primitives.Cached.Tests.Fakes;
 
@@ -24,11 +24,16 @@ public sealed record CachedCharTests
     [Fact]
     public void ThrowsExceptionOnGetHashCode()
     {
-        Assert.Throws<NotSupportedException>(() => new CachedChar(new Char('A')).GetHashCode());
+        _ = Assert.Throws<NotSupportedException>(() =>
+            new CachedChar(new Char('A')).GetHashCode()
+        );
     }
+
     [Fact]
     public void ThrowsExceptionOnToString()
     {
-        Assert.Throws<NotSupportedException>(() => new CachedChar(new Char('A')).ToString());
+        _ = Assert.Throws<NotSupportedException>(() =>
+            new CachedChar(new Char('A')).ToString()
+        );
     }
 }

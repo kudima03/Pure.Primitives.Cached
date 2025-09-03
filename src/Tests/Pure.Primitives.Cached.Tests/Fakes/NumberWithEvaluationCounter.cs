@@ -1,8 +1,9 @@
-﻿using Pure.Primitives.Abstractions.Number;
+using Pure.Primitives.Abstractions.Number;
 
 namespace Pure.Primitives.Cached.Tests.Fakes;
 
-public sealed record NumberWithEvaluationCounter<T> : INumber<T> where T : System.Numerics.INumber<T>
+public sealed record NumberWithEvaluationCounter<T> : INumber<T>
+    where T : System.Numerics.INumber<T>
 {
     private readonly T _value;
 
