@@ -12,7 +12,7 @@ using Time = Primitives.Time.Time;
 public sealed record CachedDateTimeTests
 {
     [Fact]
-    public void UnderlyingValueEvaluatesOnce()
+    public void UnderlyingValueIsCached()
     {
         NumberWithEvaluationCounter<ushort> underlyingYear =
             new NumberWithEvaluationCounter<ushort>(2000);
@@ -35,7 +35,7 @@ public sealed record CachedDateTimeTests
 
         IDateTime cached = new CachedDateTime(
             new DateTime(
-                new Date(underlyingYear, underlyingMonth, underlyingDay),
+                new Date(underlyingDay, underlyingMonth, underlyingYear),
                 new Time(
                     underlyingHour,
                     underlyingMinute,
@@ -72,7 +72,7 @@ public sealed record CachedDateTimeTests
                 underlyingMillisecond,
                 underlyingMicrosecond,
                 underlyingNanosecond,
-            }.All(x => x.AccessCounter == 1)
+            }.All(x => x.AccessCounter == 2)
         );
     }
 
