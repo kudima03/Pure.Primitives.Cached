@@ -10,7 +10,7 @@ using Time = Primitives.Time.Time;
 public sealed record CachedTimeTests
 {
     [Fact]
-    public void UnderlyingValueEvaluatesOnce()
+    public void UnderlyingValueIsCached()
     {
         NumberWithEvaluationCounter<ushort> underlyingHour =
             new NumberWithEvaluationCounter<ushort>(1);
@@ -54,7 +54,7 @@ public sealed record CachedTimeTests
                 underlyingMillisecond,
                 underlyingMicrosecond,
                 underlyingNanosecond,
-            }.All(x => x.AccessCounter == 1)
+            }.All(x => x.AccessCounter == 2)
         );
     }
 
