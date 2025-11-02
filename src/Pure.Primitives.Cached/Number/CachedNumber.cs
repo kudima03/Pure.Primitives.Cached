@@ -1,17 +1,12 @@
 namespace Pure.Primitives.Cached.Number;
 
 public sealed record CachedNumber<T> : Abstractions.Number.INumber<T>
-    where T : System.Numerics.INumber<T>
+    where T : System.Numerics.INumber<T>, new()
 {
     private readonly Lazy<T> _lazyValue;
 
     public CachedNumber(Abstractions.Number.INumber<T> value)
-        : this(
-            new Lazy<T>(
-                () => value.NumberValue,
-                LazyThreadSafetyMode.ExecutionAndPublication
-            )
-        )
+        : this(new Lazy<T>(() => value.NumberValue))
     { }
 
     private CachedNumber(Lazy<T> lazyValue)
