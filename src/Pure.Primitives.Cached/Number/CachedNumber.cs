@@ -14,7 +14,7 @@ public sealed record CachedNumber<T> : Abstractions.Number.INumber<T>
         _lazyValue = lazyValue;
     }
 
-    T Abstractions.Number.INumber<T>.NumberValue => _lazyValue.Value;
+    public T NumberValue => _lazyValue.Value;
 
     public override int GetHashCode()
     {

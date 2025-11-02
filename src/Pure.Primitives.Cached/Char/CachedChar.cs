@@ -20,7 +20,7 @@ public sealed record CachedChar : IChar
         _lazyValue = lazyValue;
     }
 
-    char IChar.CharValue => _lazyValue.Value;
+    public char CharValue => _lazyValue.Value;
 
     public override int GetHashCode()
     {

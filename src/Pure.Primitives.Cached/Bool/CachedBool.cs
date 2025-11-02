@@ -20,7 +20,7 @@ public sealed record CachedBool : IBool
         _lazyValue = lazyValue;
     }
 
-    bool IBool.BoolValue => _lazyValue.Value;
+    public bool BoolValue => _lazyValue.Value;
 
     public override int GetHashCode()
     {
