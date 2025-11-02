@@ -22,7 +22,7 @@ public sealed record CachedDayOfWeek : IDayOfWeek
         _lazyValue = lazyValue;
     }
 
-    INumber<ushort> IDayOfWeek.DayNumberValue => _lazyValue.Value;
+    public INumber<ushort> DayNumberValue => _lazyValue.Value;
 
     public override int GetHashCode()
     {

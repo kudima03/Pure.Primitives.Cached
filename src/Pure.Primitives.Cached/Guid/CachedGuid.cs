@@ -20,7 +20,7 @@ public sealed record CachedGuid : IGuid
         _lazyValue = lazyValue;
     }
 
-    System.Guid IGuid.GuidValue => _lazyValue.Value;
+    public System.Guid GuidValue => _lazyValue.Value;
 
     public override int GetHashCode()
     {
