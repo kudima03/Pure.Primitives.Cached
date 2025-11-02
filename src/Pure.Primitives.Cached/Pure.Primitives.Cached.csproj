@@ -14,6 +14,7 @@
     <PackageProjectUrl>https://github.com/kudima03/Pure.Primitives.Cached</PackageProjectUrl>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Pure.Primitives" Version="3.3.0" />
+    <PackageReference Include="Pure.Primitives" Version="3.3.0" PrivateAssets="All" />
+    <PackageReference Include="Pure.Primitives.Abstractions" Version="4.1.0" />
   </ItemGroup>
 </Project>
