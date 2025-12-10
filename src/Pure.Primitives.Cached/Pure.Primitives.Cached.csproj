@@ -1,6 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net9.0</TargetFramework>
+    <TargetFrameworks>net7.0;net8.0;net9.0;net10.0;</TargetFrameworks>
+    <LangVersion>latest</LangVersion>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <IsAotCompatible>true</IsAotCompatible>
@@ -14,7 +15,6 @@
     <PackageProjectUrl>https://github.com/kudima03/Pure.Primitives.Cached</PackageProjectUrl>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Pure.Primitives" Version="3.6.2" PrivateAssets="All" />
-    <PackageReference Include="Pure.Primitives.Abstractions" Version="4.3.0" />
+    <PackageReference Include="Pure.Primitives" Version="3.6.2" />
   </ItemGroup>
 </Project>
